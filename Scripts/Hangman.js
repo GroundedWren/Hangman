@@ -54,7 +54,7 @@ window.GW = window.GW || {};
 	ns.generateGameData = (formData) => {
 		ns.Data = {
 			Step: 1,
-			MaxSteps: parseInt(formData.get("guessCount")) || 9,
+			MaxSteps: parseInt(formData.get("guessCount")) + 1 || 9,
 			Word: formData.get("useCustom")
 				? formData.get("customWord").toUpperCase()
 				: pickWord(parseInt(formData.get("wordLength")) || 5),
