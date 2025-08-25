@@ -259,6 +259,13 @@ window.GW = window.GW || {};
 			});
 		}
 
+		setLayout(layout) {
+			const selLayout = this.getRef("selLayout");
+			if(layout && selLayout.value !== layout) {
+				selLayout.value = layout;
+			}
+		}
+
 		#updateKey(key, keyData) {
 			const keyEl = this.querySelector(`[data-key="${key}"]`);
 			if(keyData.Guessed) {
@@ -289,6 +296,8 @@ window.GW = window.GW || {};
 				tabbableEl => tabbableEl.setAttribute("tabindex", "-1")
 			);
 			this.querySelector(`.keys`).setAttribute("tabindex", "0");
+
+			this.dispatchEvent(new CustomEvent("layout-change", { detail: event.currentTarget.value }))
 		};
 
 		#onKeysKeydown = (event) => {

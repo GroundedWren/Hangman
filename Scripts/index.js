@@ -12,5 +12,6 @@ window.addEventListener("load", () => {
 	}
 
 	document.querySelector(`gw-keyboard`).addEventListener("key-click", GW.Hangman.onKeyClick);
+	document.querySelector(`gw-keyboard`).addEventListener("layout-change", GW.Hangman.Display.onLayoutChange);
 	GW.Hangman.renderGame();
 });
