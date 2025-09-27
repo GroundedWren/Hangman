@@ -70,6 +70,15 @@ header {
 		display: flex;
 		flex-direction: column;
 	}
+	
+	button:not([id^="gw-cell"]), summary, label, a.full {
+		min-width: 44px;
+		min-height: 44px;
+	}
+	a.full {
+		display: flex;
+		align-items: center;
+	}
 }
 
 body {
